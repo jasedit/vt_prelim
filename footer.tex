@@ -1,0 +1,24 @@
+{
+% VT requires that the Bibliography be in the ToC. The following two lines
+% add it as an entry.
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+
+\small
+\ifx\bibliocommand\undefined
+\else
+\printbibliography
+\fi
+
+\clearpage
+\pagestyle{plain}
+\phantomsection
+\addcontentsline{toc}{chapter}{Appendices}
+
+\ifx\myappendices\undefined
+\else
+\appendix
+\input{\myappendices}
+\fi
+}

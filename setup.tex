@@ -1,0 +1,185 @@
+%
+%  PROJECT: <ETD> Electronic Thesis and Dissertation Initiative
+%  TITLE: LaTeX report template for ETDs in LaTeX
+%  AUTHOR: Neill Kipp, nkipp@vt.edu
+%  URL: http://etd.vt.edu/etddev.html
+%  REVISED: September 6, 1997 [GMc 8/30/10]
+%
+% Ported to MultiMarkdown by various members of TREC in 2014-2015.
+% Modified for preliminary exams by Jason Ziglar, 2017
+
+\documentclass[12pt]{report}
+
+\usepackage{usnomencl}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage[sumlimits]{amsmath,mathtools}
+\usepackage{amssymb}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{booktabs}     % Better tables
+\usepackage{tabulary}     % Support longer table cells
+
+\renewcommand*{\chapterautorefname}{Chapter}
+%Allow for importation of custom packages on a per-user basis
+\ifx\mypackages\undefined
+\else
+\input{\mypackages}
+\fi
+
+%Correctly reacting to definition of bibliography to optionally enable biber
+\ifx\bibliocommand\undefined
+\else
+\usepackage[
+    backend=biber,
+    natbib=true,
+    sorting=none
+]{biblatex}
+\renewcommand{\bibliography}[1]{\addbibresource{#1.bib}}
+\bibliocommand
+\fi
+
+\renewcommand\[{\begin{equation}}
+\renewcommand\]{\end{equation}}
+
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}     % Set desired linespacing
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.5in}
+\setlength{\evensidemargin}{0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{0in}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.1in}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\pagenumbering{roman}
+
+\begin{center}
+
+
+
+% Title
+{\Large
+\mytitle
+}
+
+
+\vfill
+
+
+% Author name
+\myauthor
+
+
+\vfill
+
+
+% List of commitee members
+\mycommittee
+
+
+\vfill
+
+
+% Date and Location
+\ifx\mydate\undefined
+\def\mydate{\today}
+\fi
+\mydate \\
+\ifx\mydefenselocation\undefined
+Blacksburg, Virginia
+\else
+\fi
+
+
+\vfill
+
+%If year is undefined, use the current year
+\ifx\myyear\undefined
+\def\myyear{\the\year}
+\fi
+
+% List of keywords
+Keywords: \mykeywords \\
+Copyright \myyear, \myauthor
+
+
+\end{center}
+
+
+\pagebreak
+
+
+\thispagestyle{empty}
+
+\begin{center}
+
+
+{\large \mytitle}
+
+
+\vfill
+
+
+\myauthor
+
+
+\vfill
+
+
+% Abstract
+Abstract
+
+
+\vfill
+
+
+\end{center}
+
+% If myabstract is defined, use it
+\ifdefined \myabstract
+\input{\myabstract}
+\fi
+
+% Grant Information
+\ifx\mygrants\undefined
+\else
+  \mygrants
+\fi
+
+\pagebreak
+
+
+% Table of Contents
+\tableofcontents
+
+\pagebreak
+
+
+% List of Figures
+\listoffigures
+
+\pagebreak
+
+
+% List of Tables
+\listoftables
+
+\pagebreak
+
+\pagenumbering{arabic}
+
+\pagestyle{myheadings}
+
+% Set line spacing after front matter
+\ifx\mylinespace\undefined
+\else
+  \mylinespace
+\fi
