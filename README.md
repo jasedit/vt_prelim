@@ -27,6 +27,7 @@ Variables have two potential configuration points, which will be described here.
 4. `bibtex`, `$BIBTEX` - defines the Bibtex file to process for this document. Delete this line to eliminate bibliography support
 5. `myappendices`, `$APPENDICES` - defines the name of the file to include directly into the LaTeX output as the appendices. Not required.
 6. `mypackages` - If defined, includes the value of this key as a filename in the document preamble, allowing for custom packages and commands to be included
+7. `my glossary` - If defined, includes the file named and adds glossaries using the [glossaries](https://www.ctan.org/pkg/glossaries) package.
 
 ## LaTeX/Metadata Variables
 

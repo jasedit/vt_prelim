@@ -20,9 +20,12 @@
 \usepackage{hyperref}
 \usepackage{booktabs}     % Better tables
 \usepackage{tabulary}     % Support longer table cells
-\usepackage[acronym,xindy,nomain,nonumberlist]{glossaries}
+
+\ifdefined\myglossary
+\usepackage[toc,acronym,xindy,nomain,nonumberlist,nopostdot]{glossaries}
 
 \makeglossaries
+\fi
 
 \renewcommand*{\chapterautorefname}{Chapter}
 %Allow for importation of custom packages on a per-user basis
@@ -177,9 +180,12 @@ Abstract
 
 \pagebreak
 
+\ifdefined\myglossary
+\input{\myglossary}
 % Glossaries
 \printglossaries
 \pagebreak
+\fi
 
 \pagenumbering{arabic}
 
