@@ -1,6 +1,6 @@
 # Overview
 
-This repository contains a LaTeX template that matches the requirements of Virginia Tech's Electronic Thesis and Dissertation (ETD) repository. This template has been refactored to integrate with [scriptorium](https://github.com/jasedi/scriptorium), a MultiMarkdown based writing tool.
+This repository contains a LaTeX template that matches the requirements of Virginia Tech's Electronic Thesis and Dissertation (ETD) repository. This template has been refactored to integrate with [scriptorium](https://github.com/jasedit/scriptorium), a MultiMarkdown based writing tool.
 
 # Instructions
 
@@ -31,7 +31,7 @@ Variables have two potential configuration points, which will be described here.
 
 ## LaTeX/Metadata Variables
 
-These variables can be found in the `metadata.tex` file defined in a paper directory.
+These variables can be found in the `metadata.tex` file in a paper directory.
 
 1. `mykeywords`, `$KEYWORDS` - Keywords which are inserted into the document for metadata purposes
 2. `mycommittee`, `$COMMITTEE` - List of committee members to place on cover page. This is unfiltered, so raw LaTeX is fully supported for multi-line and odd names
