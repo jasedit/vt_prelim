@@ -10,7 +10,6 @@
 
 \documentclass[12pt]{report}
 
-\usepackage{usnomencl}
 \usepackage{graphics}
 \usepackage{graphicx}
 \usepackage{geometry}
@@ -21,6 +20,9 @@
 \usepackage{hyperref}
 \usepackage{booktabs}     % Better tables
 \usepackage{tabulary}     % Support longer table cells
+\usepackage[acronym,xindy,nomain,nonumberlist]{glossaries}
+
+\makeglossaries
 
 \renewcommand*{\chapterautorefname}{Chapter}
 %Allow for importation of custom packages on a per-user basis
@@ -65,8 +67,6 @@
 \pagenumbering{roman}
 
 \begin{center}
-
-
 
 % Title
 {\Large
@@ -175,6 +175,10 @@ Abstract
 % List of Tables
 \listoftables
 
+\pagebreak
+
+% Glossaries
+\printglossaries
 \pagebreak
 
 \pagenumbering{arabic}
