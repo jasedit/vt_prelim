@@ -114,24 +114,22 @@ Copyright \myyear, \myauthor
 
 \pagebreak
 
+% If myabstract is defined, use it
+\ifdefined \myabstract
 \thispagestyle{empty}
 
 \begin{center}
+  {\large \mytitle}
+  \vfill
 
-{\large \mytitle}
-\vfill
+  \myauthor
+  \vfill
 
-\myauthor
-\vfill
-
-
-% Abstract
-Abstract
-\vfill
+  % Abstract
+  Abstract
+  \vfill
 \end{center}
 
-% If myabstract is defined, use it
-\ifdefined \myabstract
 \input{\myabstract}
 \fi
 
@@ -139,9 +137,9 @@ Abstract
 \ifx\mygrants\undefined
 \else
   \mygrants
+  \pagebreak
 \fi
 
-\pagebreak
 % Table of Contents
 \tableofcontents
 \pagebreak
